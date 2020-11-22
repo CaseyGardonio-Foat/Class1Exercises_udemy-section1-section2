@@ -7,3 +7,6 @@ import { Component } from '@angular/core';
     templateUrl: './server.component.html'
         //points to corresponding html file for this component
 })
+
+export class ServerComponent {
+}
