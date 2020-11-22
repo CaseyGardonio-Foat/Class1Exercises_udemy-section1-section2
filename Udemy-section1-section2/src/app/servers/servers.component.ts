@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus: string = 'No server was created!';
+  serverName: string = 'test server';
 
   constructor() {
     setTimeout(() => {
@@ -23,8 +24,16 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'A new server was created!';
+    this.serverCreationStatus = `A new server was created! Server Name is ${this.serverName}`;
     // this.allowNewServer = false
+    //  //attempt to cause the button to disable for 2 seconds after clicking; button does not reactivate after 2 seconds
+
+
+  }
+
+  onUpdateServerName(event: any){
+    console.log(event);
+    this.serverName = event.target.value
   }
 
 }
