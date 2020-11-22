@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
         //name of the HTML tag that allows us to reference this component elsewhere
     templateUrl: './server.component.html'
         //points to corresponding html file for this component
+
+    
 })
 
 export class ServerComponent {
+    serverID: number = 10;
+    serverStatus: string = 'Offline'
 }

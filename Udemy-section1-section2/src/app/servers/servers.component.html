@@ -1,4 +1,7 @@
+<button class='btn btn-primary' [disabled]='!allowNewServer' (click)='onCreateServer()'>Add Server</button>
+
 <app-server></app-server>
     <!--this selector nests the server.component in this component-->
 <app-server></app-server>
     <!--including the selector multiple times nests multiple instances of the server.component-->
+<p>{{ serverCreationStatus }}</p>
