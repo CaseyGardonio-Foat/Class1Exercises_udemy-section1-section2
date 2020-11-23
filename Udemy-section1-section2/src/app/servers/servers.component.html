@@ -5,8 +5,18 @@
 
 <button class='btn btn-primary' [disabled]='!allowNewServer' (click)='onCreateServer()'>Add Server</button>
 
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
     <!--this selector nests the server.component in this component-->
-<app-server></app-server>
-    <!--including the selector multiple times nests multiple instances of the server.component-->
-<p>{{ serverCreationStatus }}</p>
+    <!--can include the same selector multiple times to print multiple instances of the server.component-->
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf='serverCreated'>Server was created with name: {{serverName}}</p>
+
+<!--alternative syntax for using an if/else condition
+<p *ngIf='serverCreated; else noServer'>Server was created with name: {{serverName}}</p>
+<ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template>
+-->
+
+

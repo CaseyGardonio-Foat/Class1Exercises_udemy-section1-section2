@@ -13,6 +13,11 @@ export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus: string = 'No server was created!';
   serverName: string = 'test server';
+  serverCreated: boolean = false
+  servers = [
+    'testServer1',
+    'testServer2',
+  ]
 
   constructor() {
     setTimeout(() => {
@@ -24,11 +29,12 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName)
     this.serverCreationStatus = `A new server was created! Server Name is ${this.serverName}`;
+
     // this.allowNewServer = false
     //  //attempt to cause the button to disable for 2 seconds after clicking; button does not reactivate after 2 seconds
-
-
   }
 
   onUpdateServerName(event: any){
